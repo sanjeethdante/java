@@ -4,7 +4,7 @@ public class ForLoopToPrintOddNumbers {
 
 	public static void main(String[] args) {
 		for(int count = 1; count < 21; count += 1) {
-			if(count % 2 == 1) {
+			if(count % 3 == 2) {
 				System.out.println(count);
 			}
 		}
