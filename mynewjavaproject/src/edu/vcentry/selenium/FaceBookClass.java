@@ -7,42 +7,48 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
 public class FaceBookClass {
 
 	public static void main(String[] args) {
-		String projectRoot = System.getProperty("user.dir");
-		String driverPath = "\\src\\mydrivers\\chromedriver.exe";
-
-		System.out.printf("Project root - %s\n", projectRoot);
-		String finalPath = String.format("%s%s", projectRoot, driverPath);
-		System.out.printf("final path - %s\n", finalPath);
-		// ChromeDriver path =>
 		
-		System.setProperty("webdriver.chrome.driver", finalPath);
-	
-
-		// Initializing the driver
-		WebDriver Mydrivers = new ChromeDriver();
-		Mydrivers.manage().window().maximize();
-		Mydrivers.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Mydrivers.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-		Mydrivers.get("http://facebook.com");
-
-		WebElement signIn = Mydrivers.findElement(By.id("sign-in"));
-		signIn.click();
-
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		Mydrivers.close();
-		Mydrivers.quit();
-
-	
-
+      String projectroot = System.getProperty("user.dir");
+      String driverpath = "\\src\\MyDrivers\\chromedriver.exe";
+      
+      System.out.println(projectroot);
+      
+      String finalpath = String.format("%s%s",projectroot, driverpath);
+      
+      System.out.println(finalpath);
+       
+      System.setProperty("webdriver.chrome.driver",finalpath);
+      
+      
+      WebDriver drivers= new ChromeDriver();
+      drivers.manage().window().maximize();
+      drivers.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
+      drivers.manage().timeouts().pageLoadTimeout(8000, TimeUnit.SECONDS);
+      drivers.get("http://facebook.com");
+      
+      WebElement signIn= drivers.findElement(By.id("sign in"));
+      signIn.click();
+      
+      drivers.close();
+		
+      
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	}
 
